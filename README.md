@@ -7,7 +7,7 @@ This library is built entirely in pure Python. The graphical output is rendered 
 ![demo](https://gfycat.com/ancientringedivorybackedwoodswallow.gif)
 To run the demos, simply clone the repo and run the script from the root directory of the repo.
 ```console
-foo@bar:~$ git clone https://github.com/PaulVirally/Subpixel.git
-foo@bar:~$ cd Subpixel
-foo@bar:~$ python ./examples/3d.py
+git clone https://github.com/PaulVirally/Subpixel.git
+cd Subpixel
+python ./examples/3d.py
 ```
