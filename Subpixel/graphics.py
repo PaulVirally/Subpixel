@@ -24,7 +24,7 @@ def draw_line(pixels, p1, p2):
         if y1 > y2:
             _draw_line_inc(pixels, p2_scrn, p1_scrn)
         else:
-             _draw_line_inc(pixels, p1_scrn, p2_scrn)
+            _draw_line_inc(pixels, p1_scrn, p2_scrn)
 
 def _draw_line_dec(pixels, p1, p2):
     x1, y1 = p1
