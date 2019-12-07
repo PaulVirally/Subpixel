@@ -4,7 +4,7 @@ This is a graphics engine built for TUI applications. If you were to try to use 
 This library is built entirely in pure Python. The graphical output is rendered using [curses](https://docs.python.org/3/library/curses.html).
 
 ## Demo
-![demo](https://gfycat.com/ifr/ancientringedivorybackedwoodswallow)
+![demo](https://gfycat.com/ifr/ancientringedivorybackedwoodswallow.gif)
 To run the demos, simply clone the repo and run the script from the root directory of the repo.
 ```console
 foo@bar:~$ git clone https://github.com/PaulVirally/Subpixel.git
