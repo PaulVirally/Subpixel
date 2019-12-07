@@ -4,9 +4,9 @@ This is a graphics engine built for TUI applications. If you were to try to use 
 This library is built entirely in pure Python. The graphical output is rendered using [curses](https://docs.python.org/3/library/curses.html).
 
 ## Demo
-![demo](https://gfycat.com/ancientringedivorybackedwoodswallow.gif)
+![demo](https://media.giphy.com/media/eHdSBboV6xltfsKl5f/giphy.gif)
 To run the demos, simply clone the repo and run the script from the root directory of the repo.
-```console
+```sh
 git clone https://github.com/PaulVirally/Subpixel.git
 cd Subpixel
 python ./examples/3d.py
