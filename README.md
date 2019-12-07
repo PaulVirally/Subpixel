@@ -5,6 +5,7 @@ This library is built entirely in pure Python. The graphical output is rendered 
 
 ## Demo
 ![demo](https://media.giphy.com/media/eHdSBboV6xltfsKl5f/giphy.gif)
+
 To run the demos, simply clone the repo and run the script from the root directory of the repo.
 ```sh
 git clone https://github.com/PaulVirally/Subpixel.git
