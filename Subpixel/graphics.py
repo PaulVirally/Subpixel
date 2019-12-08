@@ -75,3 +75,33 @@ def _draw_line_inc(pixels, p1, p2):
             x += x_inc
             D -= 2*dy
         D += 2*dx
+
+def draw_circle(pixels, center, radius):
+    x = 0
+    y = radius
+    d = 3 - 2*radius
+
+    _draw_mini_circle(pixels, center, [x, y])
+    while y >= x:
+        x += 1
+
+        if d > 0:
+            y -= 1
+            d += 10 + 4*(x - y)
+        else:
+            d += 6 + 4*x
+
+        _draw_mini_circle(pixels, center, [x, y])
+
+def _draw_mini_circle(pixels, center, offset):
+    xc, yc = int(center[0]), int(center[1])
+    x, y = int(offset[0]), int(offset[1])
+
+    pixels[yc + y][xc + x] = 1
+    pixels[yc + y][xc - x] = 1
+    pixels[yc - y][xc + x] = 1
+    pixels[yc - y][xc - x] = 1
+    pixels[yc + x][xc + y] = 1
+    pixels[yc + x][xc - y] = 1
+    pixels[yc - x][xc + y] = 1
+    pixels[yc - x][xc - y] = 1
