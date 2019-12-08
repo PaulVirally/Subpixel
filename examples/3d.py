@@ -63,7 +63,6 @@ def main(stdscr):
         stdscr.refresh()
         stdscr.erase()
         for i in range(pix_height):
-            row = []
             for j in range(pix_width):
                 arr[i][j] = 0
 
