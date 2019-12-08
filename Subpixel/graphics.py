@@ -105,3 +105,50 @@ def _draw_mini_circle(pixels, center, offset):
     pixels[yc + x][xc - y] = 1
     pixels[yc - x][xc + y] = 1
     pixels[yc - x][xc - y] = 1
+
+def draw_ellipse(pixels, center, rx, ry):
+    x = 0
+    y = ry
+
+    dx = 0
+    dy = 2 * ry * rx**2
+
+    d = ry**2 - ry * rx**2 + 1/4 * rx**2
+    _draw_mini_ellipse(pixels, center, [x, y])
+    while dx < dy:
+        x += 1
+
+        if d < 0:
+            dx += 2 * ry**2
+            d += ry**2 + dx
+        else:
+            y -= 1
+            dx += 2 * ry**2
+            dy -= 2 * rx**2
+            d += dx - dy + ry**2
+
+        _draw_mini_ellipse(pixels, center, [x, y])
+        
+    d = (ry**2 * (x + 1/2)**2) + (rx**2 * (y - 1)**2) - (rx**2 * ry**2)
+    while y >= 0:
+        y -= 1
+
+        if d > 0:
+            dy -= 2 * rx**2
+            d += rx**2 - dy
+        else:
+            x += 1
+            dx += 2 * ry**2
+            dy -= 2 * rx**2
+            d += dx - dy + rx**2
+
+        _draw_mini_ellipse(pixels, center, [x, y])
+
+def _draw_mini_ellipse(pixels, center, offset):
+    xc, yc = int(center[0]), int(center[1])
+    x, y = int(offset[0]), int(offset[1])
+    
+    pixels[yc + y][xc + x] = 1
+    pixels[yc + y][xc - x] = 1
+    pixels[yc - y][xc + x] = 1
+    pixels[yc - y][xc - x] = 1
