@@ -103,8 +103,5 @@ def main(stdscr):
         stdscr.addstr(0, 0, f'FPS: {int(1/(now - last_frame))}')
         last_frame = now
 
-    stdscr.refresh()
-    stdscr.getkey()
-
 if __name__ == '__main__':
     curses.wrapper(main)
