@@ -1,3 +1,5 @@
+import math
+
 def put_pixel(pixels, point, value):
     try:
         pixels[int(point[1])][int(point[0])] = value
@@ -163,3 +165,18 @@ def _draw_mini_ellipse(pixels, center, offset):
     put_pixel(pixels, [yc + y, xc - x], 1)
     put_pixel(pixels, [yc - y, xc + x], 1)
     put_pixel(pixels, [yc - y, xc - x], 1)
+
+def draw_polygon(pixels, center, radius, num_points, angle_offset=0):
+    dtheta = 360/num_points
+
+    points = []
+    angle = angle_offset
+    for i in range(num_points):
+        x = center[0] + radius * math.cos(math.radians(angle))
+        y = center[1] + radius * math.sin(math.radians(angle))
+        points.append([x, y])
+        angle += dtheta
+
+    for i in range(num_points - 1):
+        draw_line(pixels, points[i], points[i + 1])
+    draw_line(pixels, points[-1], points[0])
