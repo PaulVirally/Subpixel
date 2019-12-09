@@ -16,15 +16,7 @@ vertices = [[-0.5, -0.5, -0.5],
             [-0.5,  0.5,  0.5],
             [-0.5,  0.5, -0.5]]
 
-#  vertices = [[-0.5, -0.5],
-            #  [-0.5,  0.5],
-            #  [ 0.5,  0.5],
-            #  [ 0.5, -0.5]]
-
 def rotate(vertices, angle, axis):
-    #  rot_mat = [[math.cos(angle), -math.sin(angle)],
-               #  [math.sin(angle),  math.cos(angle)]]
-    
     c = math.cos(angle)
     s = math.sin(angle)
     x, y, z = axis
@@ -42,6 +34,9 @@ def project(vertices):
         x, y, z = vertex
         vertices_2d.append([x, y])
     return vertices_2d
+
+def remap(x, x_start, x_end, y_start, y_end):
+    return y_start + (y_end - y_start) * ((x - x_start) / (x_end - x_start))
 
 def main(stdscr):
     curses.curs_set(0)
@@ -68,6 +63,12 @@ def main(stdscr):
 
         # Project
         vertices_2d = project(vertices)
+
+
+        # Convert the coordinates from the range [-1, 1] to the actual screen width and height
+        for vertex in vertices_2d:
+            vertex[0] = remap(vertex[0], -1, 1, 0, pix_width)
+            vertex[1] = remap(vertex[1], -1, 1, 0, pix_height)
 
         # Draw
         graphics.draw_line(arr, vertices_2d[0], vertices_2d[1])
