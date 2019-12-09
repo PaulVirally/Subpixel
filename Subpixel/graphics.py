@@ -78,9 +78,6 @@ def draw_rectangle(pixels, bottom_left, top_right):
     draw_line(pixels, top_left, bottom_left)
 
 def draw_square(pixels, center, size):
-    w, h = len(pixels[0]), len(pixels)
-    center = global_to_screen(center, w, h)
-
     bottom_left = [center[0] - size//2, center[1] - size//2]
     top_right = [center[0] + size//2, center[1] + size//2]
 
