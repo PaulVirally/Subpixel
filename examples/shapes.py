@@ -41,7 +41,6 @@ def main(stdscr):
         graphics.draw_rectangle(arr, [2*pix_width/3, 5*pix_height/6], [pix_width - 2, 11*pix_height/12])
         graphics.draw_polygon(arr, [pix_width/2, 7*pix_height/8], min(pix_width/6, pix_height/8), 5, angle_offset=-18)
 
-
         # Render
         chars = array_to_pixels(arr)
 
